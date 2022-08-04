@@ -11,7 +11,7 @@ class Connections(models.Model):
     date_met=models.DateField()
     meeting_details=models.CharField(max_length=500, blank=True)
     fun_fact=models.CharField(max_length=500)
-    points=models.IntegerField(max_length=100,)
+    points=models.IntegerField(max_length=100)
 
     class Meta:
         ordering=[id]

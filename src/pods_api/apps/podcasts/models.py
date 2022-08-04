@@ -1,5 +1,21 @@
 from django.db import models
 
+# category choices 
+categories=(
+    ('Finance','Finance'),
+    ('Legal','Legal'),
+    ('Marketing','Marketing'),
+    ('Sales','Sales'),
+    ('Social Media','Social Media'),
+    ('Design','Design'),
+    ('Product','Product'),
+    ('Leadership','Leadership'),
+    ('Mindset','Mindset'),
+    ('Communication & Story Telling','Communication & Story Telling'),
+    ('Culture','Culture'),
+    ('OKRS','OKRS'),
+    ('General','General'),
+)
 # Create your models here.
 class Podcasts(models.Model):
     id=models.IntegerField(primary_key=True)
@@ -8,9 +24,10 @@ class Podcasts(models.Model):
     date_listened=models.DateField()
     podcast_name=models.CharField(max_length=255, blank=True)
     podcast_link=models.CharField(max_length=500)
-    podcast_category=models.CharField(max_length=500)
-    podcast_group=models.CharField(max_length=500)
-    points=models.IntegerField(max_length=100,)
+    podcast_category=models.CharField(max_length=500,choices=categories,default="General")
+    podcast_group=models.CharField(max_length=255)
+    points=models.IntegerField(max_length=100)
+
 
     class Meta:
         ordering=[id]
