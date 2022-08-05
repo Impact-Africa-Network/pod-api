@@ -20,7 +20,7 @@ categories=(
 )
 # Create your models here.
 class Podcasts(models.Model):
-    id=models.IntegerField(primary_key=True)
+    id=models.AutoField(primary_key=True)
     full_name=models.CharField(max_length=255,blank=False)
     ld_number=models.CharField(max_length=10, blank=False, unique=True)
     date_listened=models.DateField()

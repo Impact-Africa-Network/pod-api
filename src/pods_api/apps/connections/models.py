@@ -6,7 +6,7 @@ from ian_account.models import User
 # Create your models here.
 
 class Connections(models.Model):
-    id=models.IntegerField(primary_key=True)
+    id=models.AutoField(primary_key=True)
     full_name=models.CharField(max_length=255,blank=False)
     ld_number=models.CharField(max_length=10, blank=False, unique=True)
     person_met=models.CharField(max_length=255, blank=False)
