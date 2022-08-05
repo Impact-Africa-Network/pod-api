@@ -22,7 +22,7 @@ categories=(
 class Podcasts(models.Model):
     id=models.AutoField(primary_key=True)
     full_name=models.CharField(max_length=255,blank=False)
-    ld_number=models.CharField(max_length=10, blank=False, unique=True)
+    ld_number=models.CharField(max_length=10, blank=False)
     date_listened=models.DateField()
     podcast_name=models.CharField(max_length=255, blank=False)
     podcast_link=models.CharField(max_length=500,blank=False, unique=True)

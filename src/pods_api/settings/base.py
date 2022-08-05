@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'storages',
     'rest_framework',
     'ian_account',
+    'ian_auth',
     'pods_api.apps.connections',
     'pods_api.apps.podcasts',
 ]
@@ -84,6 +85,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'ian_auth.middleware.IANAuthMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'pods_api.urls'
@@ -163,3 +166,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+IAN_ENCRYPTION_KEY=config('IAN_ENCRYPTION_KEY')
+X_IAN_TOKEN=config('X_IAN_TOKEN')
