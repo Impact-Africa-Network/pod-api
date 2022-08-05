@@ -1,10 +1,10 @@
 from django.urls import path
-from podcasts import views
+from .views import *
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns=[
-    path('podcasts/',views.podcasts_list  , name='podcasts'),
-    path('podcasts-detail/<int:pk>',views.podcast_detail, name='podcast-details'),
+    path('podcasts/',podcasts_list),
+    path('podcasts-detail/<int:pk>',podcast_detail),
 ]
 
 

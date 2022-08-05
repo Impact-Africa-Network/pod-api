@@ -1,10 +1,10 @@
 from django.urls import path
-from connections import views
+from .views import *
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns=[
-    path('connections/',views.connections_list, name='connections'),
-    path('connection-detail/<int:pk>',views.connection_detail, name='connection-details'),
+    path('connections/',connections_list),
+    path('connection-detail/<int:pk>',connection_detail),
 ]
 
 urlpatterns=format_suffix_patterns(urlpatterns)

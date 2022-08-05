@@ -44,12 +44,37 @@ INSTALLED_APPS = [
     'storages',
     'rest_framework',
     'ian_account',
-    'connections',
-    'podcasts',
+    'pods_api.apps.connections',
+    'pods_api.apps.podcasts',
 ]
 
 AUTH_USER_MODEL = "ian_account.User"
 
+# frontend urls 
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://localhost:3000/',
+    'http://127.0.0.1:3000'
+]
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+]
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+]
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "origin",
+    "X-IDT",
+    "XAT",
+]
+CSRF_COOKIE_NAME = "csrftoken"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
